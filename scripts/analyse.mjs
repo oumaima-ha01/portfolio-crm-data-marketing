@@ -44,7 +44,7 @@ db.exec('COMMIT');
 
 const sql = readFileSync(join(racine, 'sql', 'analyses.sql'), 'utf8');
 const blocs = [...sql.matchAll(/-- name: ([\w]+)\s*\n([\s\S]*?);(?=\s*(?:-- name:|$))/g)];
-if (blocs.length !== 8) throw new Error('Nombre de requêtes inattendu');
+if (blocs.length !== 9) throw new Error('Nombre de requêtes inattendu');
 const resultats = { source: 'UCI Bank Marketing / bank-additional-full.csv', lignes: lignes.length, analyses: {} };
 for (const [, nom, requete] of blocs) resultats.analyses[nom] = db.prepare(requete).all();
 function intervalleWilson(succes, effectif) {

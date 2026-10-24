@@ -16,7 +16,7 @@ Source : `bank-additional-names.txt` inclus dans l'[archive UCI](https://archive
 | `day_of_week` | Jour de semaine du dernier contact | Aucun jour du mois dans cette variante. |
 | `duration` | Durée du dernier appel, secondes | Connue après l'appel ; exclue de la priorisation prospective. |
 | `campaign` | Nombre de contacts dans la campagne courante, dernier inclus | Variable de déroulement, non disponible telle quelle avant le premier appel. |
-| `pdays` | Jours depuis le dernier contact de campagne antérieure | `999` = pas de contact précédent ; valeur sentinelle. |
+| `pdays` | Jours depuis le dernier contact de campagne antérieure | `999` est une valeur sentinelle, non 999 jours. La notice l'associe à l'absence de contact précédent, mais 4 110 lignes ont aussi `previous > 0` : ne pas l'interpréter seule comme absence de tout historique. |
 | `previous` | Nombre de contacts avant la campagne courante | Historique ; ne donne pas les dates de chaque contact. |
 | `poutcome` | Issue de la campagne précédente | `failure`, `nonexistent`, `success`. |
 | `emp.var.rate` | Variation trimestrielle de l'emploi | Indicateur agrégé lié à la période. |

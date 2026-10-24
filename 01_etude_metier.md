@@ -29,7 +29,7 @@ La variable `y` définit la **conversion observée**. L'indicateur principal par
 
 La décision simulée est prise **avant un prochain appel**. `duration`, durée du dernier appel de la campagne courante, doit être exclue des règles de priorité : sa valeur n'est connue qu'après l'appel. UCI avertit explicitement de ce problème. `campaign` inclut le contact courant ; on ne l'utilisera pas tel quel comme prédicteur initial sans définir précisément le moment de décision. `month`, `day_of_week` et `contact` décrivent le dernier contact ; leur utilisation prospective dépend du calendrier et du canal déjà planifiés. `pdays`, `previous` et `poutcome` concernent une campagne antérieure, mais leurs valeurs spéciales doivent être contrôlées dans le fichier et son dictionnaire.
 
-Une première vue descriptive peut montrer toutes ces variables avec leur temporalité. Une analyse de **priorisation avant contact** n'emploiera que celles réellement disponibles à ce moment. Le rapport distinguera ces deux vues. Dans cette variante, `pdays = 999` signifie « pas de contact précédent » ; ce n'est pas une durée de 999 jours.
+Une première vue descriptive peut montrer toutes ces variables avec leur temporalité. Une analyse de **priorisation avant contact** n'emploiera que celles réellement disponibles à ce moment. Le rapport distinguera ces deux vues. La notice UCI décrit `pdays = 999` comme une valeur sentinelle liée à l'absence de contact antérieur : ce n'est pas une durée de 999 jours. Dans le fichier, 4 110 observations combinent pourtant `pdays = 999` et `previous > 0`. On ne doit donc pas assimiler ce code, à lui seul, à « aucun historique » ; l'écart est documenté dans l'audit et ces variables ne servent pas ici à définir une règle automatique.
 
 ## 6. Méthode prévue
 

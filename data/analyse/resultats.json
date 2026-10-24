@@ -240,6 +240,14 @@
         "ic95_bas_pct": 24.98,
         "ic95_haut_pct": 26.67
       }
+    ],
+    "coherence_historique": [
+      {
+        "sentinelle_sans_historique": 35563,
+        "sentinelle_avec_historique": 4110,
+        "jours_sans_historique": 0,
+        "jours_avec_historique": 1515
+      }
     ]
   },
   "qualite": {

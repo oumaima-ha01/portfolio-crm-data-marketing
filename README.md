@@ -4,7 +4,7 @@
 
 [Ouvrir le portfolio public](https://oumaima-ha01.github.io/portfolio-crm-data-marketing/)
 
-**État : étude, analyses SQL, dashboard, rapport et prototype local réalisés.** Le site public est servi depuis la branche `gh-pages` ; le statut du déploiement GitHub Pages doit être vérifié avant diffusion.
+**État : étude, analyses SQL, dashboard, rapport et prototype local réalisés et vérifiés.** Le site public est servi depuis la branche `gh-pages`.
 
 ## Question métier
 
@@ -16,15 +16,15 @@ Le cas s'appuie sur le fichier `bank-additional-full.csv` du [jeu Bank Marketing
 
 1. [Étude métier et protocole](01_etude_metier.md) : décision à éclairer, unité d'analyse, indicateurs, hypothèses, biais et critères de recommandation.
 2. [Vérification du fichier source](02_audit_source.md), [dictionnaire des variables](04_dictionnaire_donnees.md), contrôle qualité et définition des variables connues au moment de la décision.
-3. [Premiers résultats](03_premiers_resultats.md) produits par les [requêtes SQL](sql/analyses.sql), avec effectifs et taux. Compléter les analyses de stabilité.
+3. [Résultats et stabilité temporelle](03_premiers_resultats.md) produits par les [requêtes SQL](sql/analyses.sql), avec effectifs, taux, incertitude descriptive et contrôle de cohérence de l'historique.
 4. [Tableau de bord](site-src/index.html) et [rapport consultable / imprimable](site-src/rapport.html) : constats, incertitudes, recommandations et limites.
 5. [Prototype local d'activation](site-src/prototype.html) : cinq contacts fictifs, contrôle du consentement et de l'opposition, revue humaine ; aucun envoi. Aucun accès à une plateforme CRM tierce n'est nécessaire pour l'exécuter.
 
-## Présentation envisagée
+## Présentation
 
-Une page portfolio donnera en premier la question, trois constats démontrés et la décision proposée. Le tableau de bord permettra d'explorer les résultats ; un rapport lié expliquera la méthode et les limites. Aucun indicateur ni bénéfice ne sera affiché avant calcul et vérification.
+La page portfolio présente d'abord la question métier et les constats vérifiés. Le tableau de bord permet d'explorer trois comparaisons ; un rapport lié explique la méthode et les limites. Le prototype d'activation applique des règles à cinq contacts fictifs, sans envoyer de message. Aucun indicateur ni bénéfice n'est affiché sans calcul ni vérification.
 
-## Reproduire les premiers calculs
+## Reproduire le projet
 
 Avec Node.js 22 ou plus récent, le CSV officiel et son dictionnaire sont inclus dans `data/source/bank-additional/` sous [licence CC BY 4.0](https://archive.ics.uci.edu/dataset/222/bank+marketing). Aucun compte ni dépendance tierce n'est nécessaire. Exécuter dans cet ordre :
 
@@ -32,10 +32,11 @@ Avec Node.js 22 ou plus récent, le CSV officiel et son dictionnaire sont inclus
 node scripts/analyse.mjs
 node scripts/build-site.mjs
 node scripts/verify.mjs
+node scripts/verify-prototype.mjs
 node scripts/preview.mjs
 ```
 
-Ouvrir ensuite `http://127.0.0.1:4173/`. Le premier script charge les observations dans SQLite intégré à Node.js, exécute le SQL versionné, vérifie les partitions et écrit `data/analyse/resultats.json`. Le build prépare `dist/`, que la vérification contrôle. L'archive UCI complète peut aussi être téléchargée depuis la page source et comparée aux empreintes publiées dans l'audit.
+Ouvrir ensuite `http://127.0.0.1:4173/`. Le premier script charge les observations dans SQLite intégré à Node.js, exécute le SQL versionné, vérifie les partitions et écrit `data/analyse/resultats.json`. Le build prépare `dist/`, que les deux vérifications contrôlent. L'archive UCI complète peut aussi être téléchargée depuis la page source et comparée aux empreintes publiées dans l'audit.
 
 ## Usage et limites
 
