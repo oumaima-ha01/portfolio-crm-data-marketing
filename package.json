@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-crm-data-marketing",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "analyse": "node scripts/analyse.mjs",
+    "build": "node scripts/build-site.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

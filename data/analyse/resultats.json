@@ -1,0 +1,251 @@
+{
+  "source": "UCI Bank Marketing / bank-additional-full.csv",
+  "lignes": 41188,
+  "analyses": {
+    "global": [
+      {
+        "observations": 41188,
+        "souscriptions": 4640,
+        "taux_pct": 11.27,
+        "ic95_bas_pct": 10.96,
+        "ic95_haut_pct": 11.57
+      }
+    ],
+    "campagne_precedente": [
+      {
+        "groupe": "nonexistent",
+        "observations": 35563,
+        "souscriptions": 3141,
+        "taux_pct": 8.83,
+        "ic95_bas_pct": 8.54,
+        "ic95_haut_pct": 9.13
+      },
+      {
+        "groupe": "failure",
+        "observations": 4252,
+        "souscriptions": 605,
+        "taux_pct": 14.23,
+        "ic95_bas_pct": 13.21,
+        "ic95_haut_pct": 15.31
+      },
+      {
+        "groupe": "success",
+        "observations": 1373,
+        "souscriptions": 894,
+        "taux_pct": 65.11,
+        "ic95_bas_pct": 62.55,
+        "ic95_haut_pct": 67.59
+      }
+    ],
+    "contacts_precedents": [
+      {
+        "groupe": "aucun",
+        "observations": 35563,
+        "souscriptions": 3141,
+        "taux_pct": 8.83,
+        "ic95_bas_pct": 8.54,
+        "ic95_haut_pct": 9.13
+      },
+      {
+        "groupe": "un",
+        "observations": 4561,
+        "souscriptions": 967,
+        "taux_pct": 21.2,
+        "ic95_bas_pct": 20.04,
+        "ic95_haut_pct": 22.41
+      },
+      {
+        "groupe": "deux_ou_trois",
+        "observations": 970,
+        "souscriptions": 478,
+        "taux_pct": 49.28,
+        "ic95_bas_pct": 46.14,
+        "ic95_haut_pct": 52.42
+      },
+      {
+        "groupe": "quatre_ou_plus",
+        "observations": 94,
+        "souscriptions": 54,
+        "taux_pct": 57.45,
+        "ic95_bas_pct": 47.35,
+        "ic95_haut_pct": 66.96
+      }
+    ],
+    "pression_campagne_courante_descriptive": [
+      {
+        "groupe": "un",
+        "observations": 17642,
+        "souscriptions": 2300,
+        "taux_pct": 13.04,
+        "ic95_bas_pct": 12.55,
+        "ic95_haut_pct": 13.54
+      },
+      {
+        "groupe": "deux",
+        "observations": 10570,
+        "souscriptions": 1211,
+        "taux_pct": 11.46,
+        "ic95_bas_pct": 10.86,
+        "ic95_haut_pct": 12.08
+      },
+      {
+        "groupe": "trois_a_cinq",
+        "observations": 9591,
+        "souscriptions": 943,
+        "taux_pct": 9.83,
+        "ic95_bas_pct": 9.25,
+        "ic95_haut_pct": 10.44
+      },
+      {
+        "groupe": "six_ou_plus",
+        "observations": 3385,
+        "souscriptions": 186,
+        "taux_pct": 5.49,
+        "ic95_bas_pct": 4.78,
+        "ic95_haut_pct": 6.31
+      }
+    ],
+    "canal_descriptif": [
+      {
+        "groupe": "cellular",
+        "observations": 26144,
+        "souscriptions": 3853,
+        "taux_pct": 14.74,
+        "ic95_bas_pct": 14.31,
+        "ic95_haut_pct": 15.17
+      },
+      {
+        "groupe": "telephone",
+        "observations": 15044,
+        "souscriptions": 787,
+        "taux_pct": 5.23,
+        "ic95_bas_pct": 4.89,
+        "ic95_haut_pct": 5.6
+      }
+    ],
+    "valeurs_inconnues": [
+      {
+        "job": 330,
+        "marital": 80,
+        "education": 1731,
+        "defaut_credit": 8597,
+        "pret_immobilier": 990,
+        "pret_personnel": 990
+      }
+    ],
+    "campagne_precedente_par_quartile": [
+      {
+        "quartile": "Q1",
+        "groupe": "nonexistent",
+        "observations": 10297,
+        "souscriptions": 350,
+        "taux_pct": 3.4,
+        "ic95_bas_pct": 3.07,
+        "ic95_haut_pct": 3.77
+      },
+      {
+        "quartile": "Q2",
+        "groupe": "nonexistent",
+        "observations": 10297,
+        "souscriptions": 613,
+        "taux_pct": 5.95,
+        "ic95_bas_pct": 5.51,
+        "ic95_haut_pct": 6.43
+      },
+      {
+        "quartile": "Q3",
+        "groupe": "failure",
+        "observations": 1421,
+        "souscriptions": 100,
+        "taux_pct": 7.04,
+        "ic95_bas_pct": 5.82,
+        "ic95_haut_pct": 8.49
+      },
+      {
+        "quartile": "Q3",
+        "groupe": "nonexistent",
+        "observations": 8746,
+        "souscriptions": 866,
+        "taux_pct": 9.9,
+        "ic95_bas_pct": 9.29,
+        "ic95_haut_pct": 10.55
+      },
+      {
+        "quartile": "Q3",
+        "groupe": "success",
+        "observations": 130,
+        "souscriptions": 53,
+        "taux_pct": 40.77,
+        "ic95_bas_pct": 32.7,
+        "ic95_haut_pct": 49.36
+      },
+      {
+        "quartile": "Q4",
+        "groupe": "failure",
+        "observations": 2831,
+        "souscriptions": 505,
+        "taux_pct": 17.84,
+        "ic95_bas_pct": 16.47,
+        "ic95_haut_pct": 19.29
+      },
+      {
+        "quartile": "Q4",
+        "groupe": "nonexistent",
+        "observations": 6223,
+        "souscriptions": 1312,
+        "taux_pct": 21.08,
+        "ic95_bas_pct": 20.09,
+        "ic95_haut_pct": 22.11
+      },
+      {
+        "quartile": "Q4",
+        "groupe": "success",
+        "observations": 1243,
+        "souscriptions": 841,
+        "taux_pct": 67.66,
+        "ic95_bas_pct": 65.01,
+        "ic95_haut_pct": 70.2
+      }
+    ],
+    "contexte_par_quartile": [
+      {
+        "quartile": "Q1",
+        "observations": 10297,
+        "souscriptions": 350,
+        "taux_pct": 3.4,
+        "ic95_bas_pct": 3.07,
+        "ic95_haut_pct": 3.77
+      },
+      {
+        "quartile": "Q2",
+        "observations": 10297,
+        "souscriptions": 613,
+        "taux_pct": 5.95,
+        "ic95_bas_pct": 5.51,
+        "ic95_haut_pct": 6.43
+      },
+      {
+        "quartile": "Q3",
+        "observations": 10297,
+        "souscriptions": 1019,
+        "taux_pct": 9.9,
+        "ic95_bas_pct": 9.33,
+        "ic95_haut_pct": 10.49
+      },
+      {
+        "quartile": "Q4",
+        "observations": 10297,
+        "souscriptions": 2658,
+        "taux_pct": 25.81,
+        "ic95_bas_pct": 24.98,
+        "ic95_haut_pct": 26.67
+      }
+    ]
+  },
+  "qualite": {
+    "lignes_vides_champs": 0,
+    "valeurs_y_inattendues": 0,
+    "colonnes": 21,
+    "lignes_identiques": 12
+  }
+}
