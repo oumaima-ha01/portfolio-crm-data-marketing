@@ -2,7 +2,9 @@
 
 [Voir le dépôt public](https://github.com/oumaima-ha01/portfolio-crm-data-marketing)
 
-**État : étude, analyses SQL, dashboard, rapport et prototype local réalisés.** La publication du site reste à finaliser.
+[Ouvrir le portfolio public](https://oumaima-ha01.github.io/portfolio-crm-data-marketing/)
+
+**État : étude, analyses SQL, dashboard, rapport et prototype local réalisés.** Le site public est servi depuis la branche `gh-pages` ; le statut du déploiement GitHub Pages doit être vérifié avant diffusion.
 
 ## Question métier
 
