@@ -13,5 +13,5 @@ mkdirSync(join(dist, 'sql'), { recursive: true });
 copyFileSync(join(root, 'sql', 'analyses.sql'), join(dist, 'sql', 'analyses.sql'));
 const donnees = JSON.parse(readFileSync(join(dist, 'resultats.json'), 'utf8'));
 if (donnees.analyses.global[0].observations !== 41188) throw new Error('Le site ne contient pas les résultats attendus');
-writeFileSync(join(dist, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+writeFileSync(join(dist, 'robots.txt'), 'User-agent: *\nAllow: /\n');
 process.stdout.write(`Site prêt : ${dist}\n`);
