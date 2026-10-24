@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 mkdirSync(dist, { recursive: true });
-for (const nom of ['index.html', 'styles.css', 'app.js', 'rapport.html']) copyFileSync(join(root, 'site-src', nom), join(dist, nom));
+for (const nom of ['index.html', 'styles.css', 'app.js', 'rapport.html', 'prototype.html', 'prototype.js', 'prototype-logic.js']) copyFileSync(join(root, 'site-src', nom), join(dist, nom));
 copyFileSync(join(root, 'data', 'analyse', 'resultats.json'), join(dist, 'resultats.json'));
 mkdirSync(join(dist, 'documents'), { recursive: true });
 for (const nom of ['01_etude_metier.md','02_audit_source.md','03_premiers_resultats.md','04_dictionnaire_donnees.md']) copyFileSync(join(root, nom), join(dist, 'documents', nom));

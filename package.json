@@ -6,7 +6,7 @@
   "scripts": {
     "analyse": "node scripts/analyse.mjs",
     "build": "node scripts/build-site.mjs",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs && node scripts/verify-prototype.mjs"
   },
   "engines": { "node": ">=22" }
 }

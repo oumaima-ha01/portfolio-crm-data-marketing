@@ -2,7 +2,7 @@
 
 [Voir le dépôt public](https://github.com/oumaima-ha01/portfolio-crm-data-marketing)
 
-**État : étude, analyses SQL, dashboard et rapport consultable réalisés.** Le prototype d'activation et la publication restent à finaliser.
+**État : étude, analyses SQL, dashboard, rapport et prototype local réalisés.** La publication du site reste à finaliser.
 
 ## Question métier
 
@@ -16,7 +16,7 @@ Le cas s'appuie sur le fichier `bank-additional-full.csv` du [jeu Bank Marketing
 2. [Vérification du fichier source](02_audit_source.md), [dictionnaire des variables](04_dictionnaire_donnees.md), contrôle qualité et définition des variables connues au moment de la décision.
 3. [Premiers résultats](03_premiers_resultats.md) produits par les [requêtes SQL](sql/analyses.sql), avec effectifs et taux. Compléter les analyses de stabilité.
 4. [Tableau de bord](site-src/index.html) et [rapport consultable / imprimable](site-src/rapport.html) : constats, incertitudes, recommandations et limites.
-5. Éventuel prototype d'automatisation dans une plateforme accessible, avec contacts de test ; le choix de l'outil sera vérifié à ce stade.
+5. [Prototype local d'activation](site-src/prototype.html) : cinq contacts fictifs, contrôle du consentement et de l'opposition, revue humaine ; aucun envoi. Aucun accès à une plateforme CRM tierce n'est nécessaire pour l'exécuter.
 
 ## Présentation envisagée
 
