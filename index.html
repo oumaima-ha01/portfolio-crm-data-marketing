@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Étude de cas CRM et data marketing : analyse reproductible d'une campagne bancaire historique, avec données UCI, SQL, résultats et limites.">
+  <title>Étude de cas CRM · Oumaima Hannoun</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller à l'étude</a>
+  <header class="site-header">
+    <a class="identity" href="#haut">Oumaima Hannoun <span>Portfolio d'analyse</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#resultats">Résultats</a><a href="#methode">Méthode</a><a href="#sources">Sources et code</a>
+    </nav>
+  </header>
+  <main id="contenu">
+    <section class="opening" id="haut" aria-labelledby="titre">
+      <div class="opening-copy">
+        <h1 id="titre">Que peut vraiment dire une campagne CRM&nbsp;?</h1>
+        <p class="lead">Étude de cas sur 41&nbsp;188 observations d'appels bancaires. L'enjeu : distinguer un signal utile à explorer d'une promesse de ciblage que les données ne démontrent pas.</p>
+        <div class="opening-links"><a class="primary-link" href="#resultats">Explorer les résultats <span aria-hidden="true">↗</span></a><a href="rapport.html">Lire le rapport</a></div>
+      </div>
+      <div class="opening-figure" aria-label="Taux de souscription par quart de fichier, de 3,40 à 25,81 pour cent">
+        <p class="figure-title">Une moyenne cache quatre contextes</p>
+        <div id="hero-bars" class="hero-bars"></div>
+        <p class="figure-note">Quarts successifs du fichier ordonné dans le temps. Chacun compte 10&nbsp;297 observations ; ce ne sont pas des années identifiables.</p>
+      </div>
+    </section>
+
+    <section class="statement" aria-labelledby="question">
+      <h2 id="question">La question métier</h2>
+      <p>Si une équipe dispose d'une capacité d'appels limitée, quelles informations connues avant contact peuvent éclairer une priorité à <em>tester</em>&nbsp;? Le fichier décrit uniquement des appels passés. Il ne contient ni groupe non sollicité, ni consentement, ni coût de campagne.</p>
+    </section>
+
+    <section class="analysis" id="resultats" aria-labelledby="res-title">
+      <div class="section-heading"><h2 id="res-title">Les résultats observés</h2><p id="global-summary" aria-live="polite">Chargement des calculs vérifiés…</p></div>
+      <div class="analysis-control" role="group" aria-label="Choisir la comparaison">
+        <button type="button" class="active" data-view="historique" aria-pressed="true">Campagne précédente</button>
+        <button type="button" data-view="pression" aria-pressed="false">Contacts courants</button>
+        <button type="button" data-view="canal" aria-pressed="false">Canal du dernier appel</button>
+      </div>
+      <div class="analysis-layout">
+        <div class="chart-area"><h3 id="chart-title"></h3><div id="chart" class="bar-chart" aria-live="polite"></div></div>
+        <aside class="chart-annotation"><h3>Comment le lire</h3><p id="chart-reading"></p><p class="annotation-rule" id="chart-caveat"></p></aside>
+      </div>
+      <div class="table-wrap"><table><caption id="table-caption">Effectifs et taux par groupe</caption><thead><tr><th scope="col">Groupe</th><th scope="col">Observations</th><th scope="col">Souscriptions</th><th scope="col">Taux</th><th scope="col">IC 95 %</th></tr></thead><tbody id="results-body"></tbody></table></div>
+      <p class="source-line">Source : UCI Bank Marketing, variante <code>bank-additional-full</code>. Taux = souscriptions / observations du groupe. IC 95 % : intervalle de Wilson descriptif, sans correction du biais de sélection. Données historiques portugaises (2008–2010).</p>
+    </section>
+
+    <section class="finding" aria-labelledby="finding-title"><div><h2 id="finding-title">Le signal qui change la décision</h2><p>Dans le dernier quart du fichier, le taux global atteint 25,81&nbsp;%, contre 3,40&nbsp;% dans le premier. Le groupe « campagne précédente réussie » se situe presque entièrement dans cette période tardive. Comparer les taux globaux des segments sans tenir compte de la période serait trompeur.</p></div><a href="rapport.html#temporalite">Voir l'analyse temporelle <span aria-hidden="true">↗</span></a></section>
+
+    <section class="method" id="methode" aria-labelledby="method-title"><h2 id="method-title">La méthode, avant les outils</h2><div class="method-grid"><div><h3>Définir la décision</h3><p>Préciser le moment du choix, l'éligibilité des contacts et les indicateurs avant d'examiner les taux.</p></div><div><h3>Vérifier la donnée</h3><p>Lire le dictionnaire officiel, contrôler les valeurs spéciales et exclure la durée de l'appel d'une règle avant contact.</p></div><div><h3>Confronter les résultats</h3><p>Calculer les effectifs en SQL, vérifier les totaux et examiner l'évolution selon l'ordre temporel du fichier.</p></div><div><h3>Formuler une suite testable</h3><p>Proposer une hypothèse pour un futur pilote avec groupe de comparaison, sans promettre un gain causal à partir de ces observations.</p></div></div></section>
+
+    <section class="resources" id="sources" aria-labelledby="sources-title"><h2 id="sources-title">Inspecter les preuves</h2><div class="resource-list"><a href="rapport.html">Rapport méthodologique <span>Lecture détaillée ↗</span></a><a href="https://github.com/oumaima-ha01/portfolio-crm-data-marketing" target="_blank" rel="noopener noreferrer">Code et reproduction sur GitHub <span>Dépôt complet ↗</span></a><a href="documents/01_etude_metier.md">Étude métier <span>Source Markdown ↗</span></a><a href="documents/04_dictionnaire_donnees.md">Dictionnaire de données <span>21 variables ↗</span></a><a href="documents/02_audit_source.md">Audit et provenance <span>Empreintes des fichiers ↗</span></a><a href="sql/analyses.sql">Requêtes SQL <span>Calculs reproductibles ↗</span></a><a href="https://archive.ics.uci.edu/dataset/222/bank+marketing" target="_blank" rel="noopener noreferrer">Dataset officiel UCI <span>Source primaire ↗</span></a></div></section>
+  </main>
+  <footer><p>Étude personnelle d'Oumaima Hannoun. Aucune campagne réelle n'a été menée dans le cadre de ce portfolio.</p><a href="#haut">Retour en haut ↑</a></footer>
+</body>
+</html>
