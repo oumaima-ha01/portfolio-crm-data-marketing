@@ -68,3 +68,10 @@ WITH rangs AS (
 SELECT quartile, COUNT(*) AS observations, SUM(y = 'yes') AS souscriptions,
        ROUND(100.0 * AVG(y = 'yes'), 2) AS taux_pct
 FROM rangs GROUP BY quartile ORDER BY quartile;
+
+-- name: coherence_historique
+SELECT SUM(CASE WHEN pdays = 999 AND previous = 0 THEN 1 ELSE 0 END) AS sentinelle_sans_historique,
+       SUM(CASE WHEN pdays = 999 AND previous > 0 THEN 1 ELSE 0 END) AS sentinelle_avec_historique,
+       SUM(CASE WHEN pdays <> 999 AND previous = 0 THEN 1 ELSE 0 END) AS jours_sans_historique,
+       SUM(CASE WHEN pdays <> 999 AND previous > 0 THEN 1 ELSE 0 END) AS jours_avec_historique
+FROM appels;
