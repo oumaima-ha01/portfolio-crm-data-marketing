@@ -2,3 +2,4 @@ data/source/*.zip
 .impeccable/
 node_modules/
 *.log
+outputs/
